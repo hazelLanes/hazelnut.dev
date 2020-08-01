@@ -1,0 +1,12 @@
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{{ if .IsHome }}{{ $.Site.Title }}{{ else }}{{ $.Site.Title }} :: {{ .Title }}{{ end }}</title>
+
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ if .IsPage }}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
+    <meta name="author" content="{{ .Site.Author.name }}" />
+
+    <link rel="stylesheet" href="{{ "style.css" | absURL }}">
+    <link rel="shortcut icon" href="{{ "favicon.png" | absURL }}">
+</head>
